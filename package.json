@@ -1,0 +1,1 @@
+{\n  "name": "site",\n  "version": "1.0.0",\n  "description": "Basic site for Netlify deployment",\n  "scripts": {\n    "start": "serve src",\n    "build": "echo 'No build step required for static site'"\n  },\n  "devDependencies": {\n    "serve": "^14.0.1"\n  }\n}
