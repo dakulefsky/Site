@@ -1,53 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Help reprint Afikei Yehuda with authentic typesetting, accurate proofreading and beautiful binding — support our campaign." />
+  <link rel="icon" href="/favicon.ico" />
   <title>Afikei Yehuda — Campaign</title>
   <style>
     :root{
       --bg:#fbf7f2;
       --text:#2f241f;
       --gold:#c9a14b;
+      --gold-dark:#b38f38;
       --accent:#6b4a27;
       --card:#fffaf6;
+      --focus: rgba(201,161,75,0.35);
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Georgia, 'Times New Roman', serif;background:var(--bg);color:var(--text);}
-    .banner{width:100%;height:28vh;min-height:140px;background-image:url('https://i.imgur.com/XPocxMT.jpeg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative;}
+    html,body{height:100%}
+    body{margin:0;font-family:Georgia, 'Times New Roman', serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+    /* Skip link */
+    .skip-link{position:absolute;left:12px;top:12px;background:#111;color:#fff;padding:8px 12px;border-radius:6px;z-index:999;transform:translateY(-120%);transition:transform .18s ease;}
+    .skip-link:focus{transform:translateY(0);outline:3px solid var(--focus);}
+
+    header{position:relative}
+    .banner{position:relative;width:100%;height:28vh;min-height:140px;background-image:url('https://i.imgur.com/XPocxMT.jpeg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center}
     .banner::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(18,12,8,0.35), rgba(18,12,8,0.35));}
-    .banner-content{position:relative;z-index:2;text-align:center;padding:1rem;}
-    .title{font-size:2.4rem;letter-spacing:0.02em;color:var(--gold);text-shadow:0 2px 6px rgba(0,0,0,0.45);margin:0;font-weight:700}
-    .subtitle{margin-top:0.5rem;color:#fff;font-size:1.05rem;text-shadow:0 1px 3px rgba(0,0,0,0.45);}
-    .container{max-width:900px;margin:-40px auto 40px;padding:1.2rem; background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,250,244,0.95));border-radius:12px;box-shadow:0 10px 30px rgba(16,12,8,0.08);border:1px solid rgba(107,74,39,0.06);}
-    .lead{font-size:1.05rem;line-height:1.6;color:var(--text);margin:0 0 1rem;}
-    .donate{display:inline-block;background:var(--gold);color:#fff;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(201,161,75,0.18);}
-    .donate:hover{background:#b38f38;}
-    .image-block{margin-top:18px;}
-    .image-block img{max-width:100%;border-radius:10px;border:1px solid rgba(16,12,8,0.06);box-shadow:0 8px 20px rgba(16,12,8,0.06);}
-    footer{text-align:center;color:#6f5f53;font-size:0.9rem;padding:28px 12px;}
-    @media(min-width:768px){ .title{font-size:3rem} .banner{height:32vh} .container{margin-top:-60px} }
+    .banner-content{position:relative;z-index:2;text-align:center;padding:1rem;color:#fff}
+    .banner-title{font-size:2.4rem;letter-spacing:0.02em;color:var(--gold);text-shadow:0 2px 6px rgba(0,0,0,0.45);margin:0;font-weight:700}
+    .banner-subtitle{margin-top:0.5rem;color:#fff;font-size:1.05rem;text-shadow:0 1px 3px rgba(0,0,0,0.45);}
+
+    .container{max-width:900px;margin:-40px auto 40px;padding:1.4rem;background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,250,244,0.98));border-radius:12px;box-shadow:0 10px 30px rgba(16,12,8,0.06);}
+    .lead{font-size:1.05rem;line-height:1.6;color:var(--text);margin:0 0 1rem}
+
+    .cta-wrapper{text-align:center;margin:18px 0}
+    .donate{display:inline-block;background:var(--gold);color:#fff;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(201,161,75,0.18);border:none}
+    .donate:hover{background:var(--gold-dark)}
+    .donate:focus{outline:3px solid var(--focus);outline-offset:3px}
+
+    .image-block{margin-top:18px;text-align:center}
+    .image-block img{max-width:100%;height:auto;border-radius:10px;border:1px solid rgba(16,12,8,0.06);box-shadow:0 8px 20px rgba(16,12,8,0.06);}
+
+    footer{text-align:center;color:#6f5f53;font-size:0.9rem;padding:28px 12px}
+
+    /* Utility */
+    h1,h2,h3{margin:0}
+
+    @media(min-width:768px){ .banner-title{font-size:3rem} .banner{height:32vh} .container{margin-top:-60px} }
+
+    /* Ensure visible focus for keyboard users */
+    a:focus{outline-offset:3px}
   </style>
 </head>
 <body>
-  <header class="hero">
-  <img src="banner.jpg" alt="Afikei Yehuda banner" class="banner">
-</header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<section class="intro">
-  <h1>Afikei Yehuda</h1>
-  <p>Reviving the light of Chassidus through republishing his sefarim</p>
-</section>
+  <header>
+    <div class="banner" role="img" aria-label="Afikei Yehuda banner"> 
+      <div class="banner-content"> 
+        <h1 class="banner-title">Afikei Yehuda</h1>
+        <p class="banner-subtitle">Reviving the light of Chassidus through republishing his sefarim</p>
+      </div>
+    </div>
+  </header>
 
-  <main class="container" role="main">
-    <p class="lead">We invite you to join our effort to carefully reprint <strong>Afikei Yehuda</strong> with authentic typesetting, accurate proofreading, and beautiful binding — so these chassidic teachings can reach students, scholars, and families worldwide.</p>
+  <main id="main" class="container" role="main"> 
+    <p class="lead">We invite you to join our effort to carefully reprint <strong>Afikei Yehuda</strong> with authentic typesetting, accurate proofreading, and beautiful binding — so these chassidic teachings can be preserved and shared with future generations.</p>
 
-    <div style="text-align:center;">
+    <div class="cta-wrapper"> 
       <a class="donate" href="https://thechesedfund.com/dakulefsky/reprint-the-famed-afikei-yehuda" target="_blank" rel="noopener noreferrer">Donate Now</a>
     </div>
 
-    <div class="image-block" aria-hidden="false">
-      <img src="https://i.imgur.com/1MsSmAH_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Afikei Yehuda image" />
+    <div class="image-block"> 
+      <img src="https://i.imgur.com/1MsSmAH.png" srcset="https://i.imgur.com/1MsSmAH.png 520w, https://i.imgur.com/1MsSmAH.png 1040w" sizes="(max-width:600px) 100vw, 520px" width="520" height="360" alt="Cover image of Afikei Yehuda" loading="lazy" decoding="async"> 
     </div>
 
     <p style="margin-top:16px;font-size:0.95rem;color:#5e4f45;">All proceeds go directly to the reprinting project. Thank you for your support.</p>
