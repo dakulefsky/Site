@@ -1,0 +1,5 @@
+# robots.txt for Afikei Yehuda Campaign site
+User-agent: *
+Allow: /
+
+Sitemap: https://www.afikeiyehuda.org/sitemap.xml

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  XML sitemap for Afikei Yehuda Campaign site.
+  Placing this at src/sitemap.xml will make it available at:
+  https://www.afikeiyehuda.org/sitemap.xml
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.afikeiyehuda.org/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.afikeiyehuda.org/assets/images/cover-page.png</image:loc>
+      <image:caption>Afikei Yehuda Cover</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.afikeiyehuda.org/sitemap.html</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Add more <url> entries here if you add pages, e.g. /about, /press, /blog/post-1 -->
+</urlset>
